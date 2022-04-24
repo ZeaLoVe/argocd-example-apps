@@ -1,0 +1,10 @@
+namePrefix: kustomize-
+resources:
+- ../base/guestbook-ui-deployment.yaml
+- ../base/guestbook-ui-svc.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: guestbook-ui
+  newName: 198409097547.dkr.ecr.us-east-1.amazonaws.com/test/guestbook-ui # {"$imagepolicy": "flux-system:prod-image-policy:name"}
+  newTag: prod-xfs1fex0-209903021102 # {"$imagepolicy": "flux-system:prod-image-policy:tag"}
