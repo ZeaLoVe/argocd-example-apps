@@ -6,5 +6,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: guestbook-ui
-  newName: 198409097547.dkr.ecr.us-east-1.amazonaws.com/test/guestbook-ui # {"$imagepolicy": "flux-system:dev-image-policy:name"}
+  newName: 198409097547.dkr.ecr.us-east-1.amazonaws.com/test/guestbook # {"$imagepolicy": "flux-system:dev-image-policy:name"}
   newTag: dev-xfs1fex0-209903021102 # {"$imagepolicy": "flux-system:dev-image-policy:tag"}
