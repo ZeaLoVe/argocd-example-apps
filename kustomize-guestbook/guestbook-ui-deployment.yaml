@@ -14,7 +14,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: lowyard/ks-guestbook-demo:unusable
-        name: guestbook-ui
+      - image: guestbook
+        name: guestbook
         ports:
         - containerPort: 80
