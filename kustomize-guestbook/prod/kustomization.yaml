@@ -7,4 +7,4 @@ kind: Kustomization
 images:
 - name: guestbook-ui
   newName: 198409097547.dkr.ecr.us-east-1.amazonaws.com/test/guestbook # {"$imagepolicy": "flux-system:prod-image-policy:name"}
-  newTag: prod-xds13423xd-202204245933 # {"$imagepolicy": "flux-system:prod-image-policy:tag"}
+  newTag: prod-fcs3214dx-202401032211 # {"$imagepolicy": "flux-system:prod-image-policy:tag"}
