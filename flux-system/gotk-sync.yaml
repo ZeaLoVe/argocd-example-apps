@@ -25,3 +25,28 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: internal-image-repo
+  namespace: flux-system
+spec:
+  image: 198409097547.dkr.ecr.us-east-1.amazonaws.com/test/guestbook
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: dev-image-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+  name: internal-image-repo
+  filterTags:
+    pattern: "^dev-[a-zA-Z0-9]+-(?P<timestamp>.*)"
+    extract: "$timestamp"
+  policy:
+  numerical:
+    order: asc
+---
