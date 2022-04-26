@@ -7332,6 +7332,7 @@ spec:
         - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces=true
         - --log-level=info
+        - --aws-autologin-for-ecr=true   # 连接ECR需要设置
         - --log-encoding=json
         - --enable-leader-election
         env:
