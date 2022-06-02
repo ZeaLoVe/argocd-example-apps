@@ -15,10 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: yokawasa/action-setup-kube-tools@v0.7.1
+      - uses: stefanprodan/kube-tools@v1
+        with:
+          helm: 3.8.1
           
       - run: helm version
-      - run: kubectl version
 
       - name: "install k3d"
         run: |
