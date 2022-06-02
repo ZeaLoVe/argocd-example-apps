@@ -1,0 +1,21 @@
+name: Python
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install python dependences
+        shell: bash
+        run: |
+          pip3 install --user boto3 "moto[all]" yapf shfmt-py mysql-connector pymysql six PyHamcrest requests environs fire
+
+      - name: Run command
+        shell: bash
+        run: |
+          python3 -c "from hamcrest import assert_that, is_, none, is_not"
