@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: System information
+        shell: bash
+        run: |
+          df -h && ps aux && netstat -tlnp && lscpu && free -g
+
       - name: Install python dependences
         shell: bash
         run: |
