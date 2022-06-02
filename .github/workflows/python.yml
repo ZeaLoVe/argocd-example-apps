@@ -19,3 +19,8 @@ jobs:
         shell: bash
         run: |
           python3 -c "from hamcrest import assert_that, is_, none, is_not"
+
+      - name: Python version
+        shell: bash
+        run: |
+          python3 --version
